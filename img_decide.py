@@ -42,7 +42,7 @@ def detect_who(img):
     return name
 
 model = keras.models.load_model("./model.h5")
-image = cv2.imread("./origin_image/01_071.jpg")
+image = cv2.imread("./origin_image/01_043.jpg")
 
 if image is None:
     print("Not open:")
