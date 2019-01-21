@@ -42,6 +42,15 @@ Decide The Image By Model
 > pip install -r requirements.txt
 ```
 
+環境変数を設定します。
+
+> CASCADE_FILE_PATHを設定
+
+```powershell
+> copy .\.env.sample .\.env
+> code .\.env
+```
+
 ## 実行
 
 modelディレクトリにモデルファイルを配置し、判定する画像ファイルを指定して実行します。

@@ -1,11 +1,12 @@
 import sys
 import os
+import settings
 import cv2
 import keras
 import numpy as np
 import matplotlib.pyplot as plt
 
-def detect_face(model, image):
+def detect_face(model, cascade_filepath, image):
     # 画像をBGR形式からRGB形式へ変換
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     # plt.imshow(image)
@@ -14,7 +15,7 @@ def detect_face(model, image):
     # グレースケール画像へ変換
     image_gs = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
     # 顔認識の実行
-    cascade = cv2.CascadeClassifier(CASCADE_FILE_PATH)
+    cascade = cv2.CascadeClassifier(cascade_filepath)
     face_list = cascade.detectMultiScale(image_gs, scaleFactor=1.1, minNeighbors=2, minSize=(64,64))
 
     # 顔が１つ以上検出できた場合
@@ -64,8 +65,6 @@ RETURN_SUCCESS = 0
 RETURN_FAILURE = -1
 # Inpou Model Directory
 INPUT_MODEL_PATH = "./model/model.h5"
-# OpenCV Cascades File
-CASCADE_FILE_PATH = "D:\\Develop\\Bin\\opencv344\\sources\\data\\haarcascades\\haarcascade_frontalface_default.xml"
 
 def main():
     print("===================================================================")
@@ -93,7 +92,8 @@ def main():
     model = keras.models.load_model(INPUT_MODEL_PATH)
 
     # 顔認識
-    result_image = detect_face(model, image)
+    cascade_filepath = settings.CASCADE_FILE_PATH
+    result_image = detect_face(model, cascade_filepath, image)
     plt.imshow(result_image)
     plt.show()
 
