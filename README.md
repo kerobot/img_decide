@@ -13,6 +13,7 @@ Decide The Image By Model
 * Power Shell 6 x64
 * Visual Studio Code x64
 * Git for Windows x64
+* OpenCV 3.4.4
 
 ## 構築
 
