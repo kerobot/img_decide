@@ -1,8 +1,6 @@
 # img_decide
 
-Decide The Image By Model
-
-学習モデルをもとに画像ファイルから特定の顔を認識します。
+学習モデルをもとに画像ファイルから特定して顔を判別します。
 
 事前に OpenCV の haarcascade_frontalface_default.xml を用意しておくこと。
 
