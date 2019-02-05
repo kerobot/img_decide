@@ -44,7 +44,7 @@ def detect_face(model, cascade_filepath, image):
             # 認識した顔に名前を描画
             cv2.putText(image, name, (xpos, ypos+height+20),
                         cv2.FONT_HERSHEY_DUPLEX, 1, (255, 0, 0), 2)
-    #顔が検出されなかった時
+    # 顔が検出されなかった時
     else:
         print(f"顔を認識できません。")
     return image
@@ -70,7 +70,7 @@ INPUT_MODEL_PATH = "./model/model.h5"
 def main():
     print("===================================================================")
     print("顔認識 Keras 利用版")
-    print("学習モデルと指定した画像ファイルをもとに顔を認識して特定します。")
+    print("学習モデルと指定した画像ファイルをもとに本田翼か佐倉綾音かを分類します。")
     print("===================================================================")
 
     # 引数のチェック
