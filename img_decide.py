@@ -16,8 +16,8 @@ def detect_face(model, cascade_filepath, image):
     image_gs = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
     # 顔認識の実行
     cascade = cv2.CascadeClassifier(cascade_filepath)
-    face_list = cascade.detectMultiScale(image_gs, scaleFactor=1.1,
-                                         minNeighbors=2, minSize=(64, 64))
+    face_list = cascade.detectMultiScale(image_gs, scaleFactor=1.11,
+                                         minNeighbors=3, minSize=(64, 64))
 
     # 顔が１つ以上検出できた場合
     if len(face_list) > 0:
